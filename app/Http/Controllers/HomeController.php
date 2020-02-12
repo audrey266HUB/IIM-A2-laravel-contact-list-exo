@@ -15,7 +15,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        /* TODO Récupérer tout les utilisateurs, et renvoyer la view "home.blade.php avec les utilisateurs" */
+        Route::get('/utilisateurs', function () {
+
+        	    $utilisateurs = App\Utilisateur::all();
+ return view('utilisateurs', [
+        'utilisateurs' => $utilisateurs
+
+});
     }
 }
 
